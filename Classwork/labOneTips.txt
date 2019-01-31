@@ -1,0 +1,9 @@
+create a number for each of the veggies/meats
+start number at 0
+if it is toggled on or off, increment by 1
+if the number is even, it is toggled off
+if the number is odd, it is toggled on
+
+
+calculate the total on demand, don't keep a running tab
+

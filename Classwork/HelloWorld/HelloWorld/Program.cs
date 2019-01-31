@@ -14,10 +14,10 @@ namespace HelloWorld
     {
         static void Main( string[] args )
         {
+            //PlayWithArrays();
             NewGame();
             DisplayGame();
         }
-
         private static void NewGame()
         {
             Console.WriteLine("Enter the name: ");
@@ -60,8 +60,7 @@ namespace HelloWorld
 
             //5. Interpolation
             Console.WriteLine($"Completed?\t {completed}");
-
-
+            
             /*
             //Convert to a string
             string strPrice = price.ToString("C");
@@ -102,10 +101,7 @@ namespace HelloWorld
 
             input = input.PadLeft(10);
             input = input.PadRight(10, '-');
-
-
             */
-
         }
 
         private static bool ReadBoolean ( string message)
@@ -150,16 +146,34 @@ namespace HelloWorld
             };
         }
 
+        private static void PlayWithArrays ()
+        {
+            int[] prices = new int[100];
+            for (var index = 0; index < prices.Length; ++index)
+            {
+                prices[index] = index + 1;
+            };
+
+            DisplayArray(prices);
+
+            //var input = "field1,field2,field3,field4,field5";
+            //var fields = input.Split(',');
+
+        }
+        private static void DisplayArray (int[] values)
+        {
+            foreach (var item in values)
+            {
+                Console.WriteLine(item);
+            };
+        }
         private static string name;
         private static string publisher;
         private static decimal price;
         private static bool owned;
         private static bool completed;
-
     }
 }
-
-
 /*
  * Video game class
 Name - string
