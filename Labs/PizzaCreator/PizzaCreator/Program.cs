@@ -64,7 +64,7 @@ namespace PizzaCreator
         private static void DisplayOrder()
         {
 
-            Console.WriteLine("\n\n\n\n\n\n\n\n\n\n");
+            Console.WriteLine("\n\n\n\");
             Console.WriteLine("Pizza size:\n" + pizzaSize);
 
             //TODO Need logic to figure out what meat was selected
