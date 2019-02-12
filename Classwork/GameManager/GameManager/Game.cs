@@ -11,14 +11,49 @@ namespace GameManager
     public class Game
     {
         /// <summary>Name of the game.</summary>
-        public string Name = "";
+        public string Name
+        {
+            get { return _name ?? ""; }
+            set { _name = value; }
+        }
+        private string _name = "";
 
         /// <summary>Publisher of the game.</summary>
-        public string Publisher = "";
-        public decimal Price;
-        public bool Owned;
-        public bool Completed;
+        public string Publisher
+        {
+            get { return _publisher ?? ""; }
+            set { _publisher = value; }
+        }
+        private string _publisher = "";
 
+        //Calculated property
+        public bool IsCoolGame
+        {
+            get { return Publisher != "EA"; }
+        }
+        public decimal Price { get; set; }
+
+        public bool Owned { get; set; }
+
+        public bool Completed { get; set; }
+
+        //public string[] Genres
+        //{
+        //    get
+        //    {
+        //        var temp = new string[_genres.Length];
+        //        Array.Copy(_genres, temp, _genres.Length);
+        //        return temp;
+        //    }
+        //}
+        //private string[] _genres;
+
+        //Mixed accessibility
+        //public double Rate
+        //{
+        //    get;
+        //    internal set;
+        //}
 
         /// <summary>
         /// Validates the object.</summary>

@@ -211,3 +211,9 @@ OS
 	not all of the features in .net framework are there, and some won't ever be - some are windows specific and are therefore not needed
 
 assembly is a binary file on disk
+
+typical validation logic is to check for bad conditions and then validate it if none of those conditions are met.
+
+method calls are always in the form of instance.method();
+
+all types have a ToString class
