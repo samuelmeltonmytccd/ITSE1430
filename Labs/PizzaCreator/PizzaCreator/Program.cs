@@ -234,7 +234,7 @@ namespace PizzaCreator
                     pizzaCheese = "Regular";
                 if (cheeseInput == "2")
                     pizzaCheese = "Extra";
-                if ((cheeseInput != "Y") && (cheeseInput != "N"))
+                if ((cheeseInput != "1") && (cheeseInput != "2"))
                     Console.WriteLine("Please enter a valid response.");
             } while ((cheeseInput != "1") && (cheeseInput != "2"));
         }
@@ -251,7 +251,7 @@ namespace PizzaCreator
                     pizzaDelivery = "Take Out";
                 if (deliveryInput == "2")
                     pizzaDelivery = "Delivery";
-                if ((deliveryInput != "Y") && (deliveryInput != "N"))
+                if ((deliveryInput != "1") && (deliveryInput != "2"))
                     Console.WriteLine("Please enter a valid response.");
             } while ((deliveryInput != "1") && (deliveryInput != "2"));
         }
@@ -377,7 +377,7 @@ namespace PizzaCreator
                 Console.WriteLine(pizzaDelivery + "\t\t\t{0:C}", deliveryDeliveryPrice);
             }
             //Print price
-            Console.WriteLine("----------- Price: ----------------------\n {0:C}\n\n\n", pizzaPrice);
+            Console.WriteLine("----------- Price: ----------------------\n \t\t\t\t{0:C}\n\n\n", pizzaPrice);
         }
 
         //PRICE VARIABLES
