@@ -1,0 +1,297 @@
+1989 software tool and I - launched ISP called "the world"
+	still active in midwest
+	first ISP to be identified as such
+
+basic principles of internet 
+	1) internet is platform independent
+	2) no one machine or entity is in charge of internet
+	3) 
+
+The web is "only what we want you to see".
+
+web browsers based on hypertext
+	which is based on hypercard from Apple
+
+hyperlinks is formal name for hypertext objects
+
+HTML - hyptertext markup language
+
+protocols - series of rules we use to establish communication for devices
+TCP/IP - transmission control protocol/internet protocol 
+	responsible for establishing communication between 2 or more devices
+	establish language they speak
+	establish who will talk first, second
+	establish timing for interactions
+
+TCP developed in 1978
+
+IP dictates how your messages are broken down and sent out over network
+
+TCP/IP responsible for reliable transmissions from point to point
+
+3 common TCP/IP protocols used in web development environment
+	http - between web client and server for non-secure transmissions
+	FTP - between 2 or more computers to remotely upload/download files
+	
+
+httpS requires a certificate (purchase required)
+
+html5 - 1989 TIM BURNERS LEE published first version of html (1d)
+	Created in CERN
+	prototype released on "next" computer in 1990
+	based on SGML
+
+1992 national center for superconductor applications connected to CERN
+	and downloaded 2 copies of that browser
+	They developed browser  - Mosaic
+		Mark Anderson 
+			he released instruction to get images on webpage
+
+paired tag 
+	if you open it, you also must close it
+
+markup language is a set of tags/rules
+
+2 different main markup languages
+	html
+	xml - used for structuring data to converse and pass data to a server
+
+head tag and header tag are two different things
+
+head tag
+	head tag always follows the html
+	info that viewers won't see
+	sets up connections to other content/components
+	instructions directly to the browser
+	we have to identify a head tag whether we use it or not
+
+favicons 
+	icon on tab left of the website
+
+all elements should be lower case except for !DOCTYPE - web standard set by w3c
+
+tags required for an html5 web page
+	html, head, title, body, doctype
+
+empty element - not paired, do open and close it on the same instruction
+	also called: "one-sided tags"
+
+line break - br -- <br />
+
+nested element
+	AKA nested tags
+	element that contains another element
+
+paragraph element
+	<p> </p>
+	block level element
+	has special characteristics assigned to it
+
+block level element 
+	occupies the entire space of its parent element
+
+Attributes
+	All HTML elements can have attributes
+	Attributes provide additional information about an element
+	Attributes are always specified in the opening tag, never in the closing tag
+	Attributes are usually in name/value pairs
+	Attribute values are always in double quotes
+	attribute name/value pairs are lowercase
+
+4 core attributes: (typically used on every HTML element)
+	id - unique identifier for the element
+	title - gives a suggested title to the element (tooltip)
+	class - allows grouping of elements together to assign choices to a group
+	style - define the way the text looks
+
+white space
+	active white space - used to separate content from other content (utilize)
+	passive white space - white space that's just there because of browser window (minimize)
+	browser doesn't care about space in html - indentation or blank lines
+
+comments - descriptive text explaining what is going on
+	used to identify a web file - date created, author, description
+	used to explain complicated code
+	<!-- some text goes here -->
+
+
+
+
+Heading tags - block level elements
+	<h1></h1> - largest
+	<h2></h2>
+	<h3></h3>
+	<h4></h4> - about the size of normal text
+	<h5></h5>
+	<h6></h6>
+
+HTML 5 added new elements designed to help organize content
+	accessibility - screen reader friendly
+	audio/video support - 
+	doctype simplified
+	cleaner html code
+	handles storage of web page better
+	mobile friendly
+	current standard
+
+Semantic/Structural elements
+	Semantic elements have the name of the tag describing what's inside the tag.
+	All are children of body.
+<header>	</header>
+<article>	</article> 
+<aside>		</aside> (right hand side of document)
+<footer>	</footer>
+<nav>		</nav> (navigation bar setup - right under header)
+<section>	</section> (used to divide up large pieces of text)
+
+
+DIV tag
+	<div></div>
+	No defined usage rules
+	just used to create an organizational element
+
+Grouping elements
+	<div></div> - block element too (blank line in front of it and after)
+
+<p>1st paragraph</p>
+<p>2nd paragraph</p>
+<p>3rd paragraph</p>
+
+Text-level elements
+	<br />
+	<strong></strong> - bold
+	<em></em> - italics
+
+CSS - Cascading style sheets
+	css is used to contain information to explain styling for different elements of page
+	3 categories of styles
+		inline style - in line with the text
+		embedded styles - defined in one tag at the top of an html file
+		external styles - an external file containing all the styles for added web site.
+
+Inline style example:
+<h1 style="color:blue">Text goes here</h1>
+
+<style>
+</styles>
+
+external style files
+.css
+
+to connect an html file to a css external file
+
+<link href = "filename" rel="stylesheet" />
+
+linked CSS must be ordered how you want them used. base first, overriding specifics after.
+
+inline>embedded>external>browser
+
+don't use inline styles if it can be helped
+
+special characters
+	list in appendix A
+ASCII
+	good for english language
+
+Latin-1 or ISO 8859 - supports 255 characters and most languages that 
+	employ latin (English, French, spanish, Italian)
+
+Unicode - 65,536 symbols and any of the world's languages
+
+Copyright symbol - © © © © © © © 
+	&#169;
+
+syntax to get any symbol to be visible
+&#code;
+
+&copy; - character entity reference for copyright
+
+&nbsp - non breaking space
+
+<p>text here 76054  &nbsp &nbsp </p>
+
+Add an image to a web page:
+<img src="filename" alt="text" />
+put images that are being used by webpage in one folder
+heighth and width will not change actual vallues for your image
+width="value"
+height="value"
+browser will match heighth and width if you only use one. will not keep aspect ratio
+
+to display a quote
+Blockquote
+<blockquote></blockquote>
+
+lists
+grouping element
+ordered list 		(numbered)
+unordered list		(bulleted list)
+definition list		
+
+Ordered list
+<ol>
+	<li></li>	
+	<li></li>
+	<li></li>
+</ol>
+
+<ul>
+	<li></li>	
+	<li></li>
+	<li></li>
+<ul>
+<ol reversed start="50+>
+	<li value="40"></li>
+</ol>
+
+Nexted list:
+<ul>
+	<li>California</li>
+	<li>Oregon</li>
+		<ul>
+			<li>Portland</li>
+			<li>Eugene</li>
+		</ul>
+	<li>Texas<li>
+<ul>
+
+<dl>
+	<dt>Computer</dt>
+	<dd>thing that computes</dd>
+</dl>
+dt must be followed by dd
+
+Links - used to create navigation
+in HTML5 - <nav></nav>
+
+<nav>
+	<ul>
+		<li>About</li>
+		<li>Locations</li>
+		<li>Reviews</li>
+		<li>Catering</li>
+		<li>Contact</li>
+		<li>Menu</li>
+	</ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

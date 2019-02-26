@@ -1,0 +1,66 @@
+paired tag 
+	if you open it, you also must close it
+
+markup language is a set of tags/rules
+
+2 different main markup languages
+	html
+	xml - used for structuring data to converse and pass data to a server
+
+head tag and header tag are two different things
+
+head tag
+	head tag always follows the html
+	info that viewers won't see
+	sets up connections to other content/components
+	instructions directly to the browser
+	we have to identify a head tag whether we use it or not
+
+favicons 
+	icon on tab left of the website
+
+all elements should be lower case except for !DOCTYPE - web standard set by w3c
+
+tags required for an html5 web page
+	html, head, title, body, doctype
+
+empty element - not paired, do open and close it on the same instruction
+	also called: "one-sided tags"
+
+line break - br -- <br />
+
+nested element
+	AKA nested tags
+	element that contains another element
+
+paragraph element
+	<p> </p>
+	block level element
+	has special characteristics assigned to it
+
+block level element 
+	occupies the entire space of its parent element
+
+Attributes
+	All HTML elements can have attributes
+	Attributes provide additional information about an element
+	Attributes are always specified in the opening tag, never in the closing tag
+	Attributes are usually in name/value pairs
+	Attribute values are always in double quotes
+	attribute name/value pairs are lowercase
+
+4 core attributes: (typically used on every HTML element)
+	id - unique identifier for the element
+	title - gives a suggested title to the element (tooltip)
+	class - allows grouping of elements together to assign choices to a group
+	style - define the way the text looks
+
+white space
+	active white space - used to separate content from other content (utilize)
+	passive white space - white space that's just there because of browser window (minimize)
+	browser doesn't care about space in html - indentation or blank lines
+
+comments - descriptive text explaining what is going on
+	used to identify a web file - date created, author, description
+	used to explain complicated code
+	<!-- some text goes here -->

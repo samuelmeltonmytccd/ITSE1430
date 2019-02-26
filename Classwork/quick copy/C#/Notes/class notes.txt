@@ -1,0 +1,258 @@
+C#
+	case sensitivity
+	whitespace doesn't matter - anymore than one is truncated to 1
+	// comments and /* */ multi-line comment
+
+C# identifier
+	starts with _ or letter (A-Z) followed by 0 or more letters, digits, or underscores 
+		do not start with digit
+		don't use underscores as spaces in identifiers
+
+var declare
+	Type identifier;
+
+var define
+	type value;
+
+We don't declare functions without giving them a body. (in C#)
+
+function declaration
+	Type identifier ([params]) {S*}
+		parameters are how you pass data into function
+		statement defines function body
+		You can have [modifiers] in front
+
+console is a type
+	how you write or read to command window
+
+overloading allows us to use a function without declaring it's type 
+
+variable = expression
+
+l value is anything that can appear on the left side of an assignment
+r value is anything that can appear on the right side of an assignment
+
+expression is a value that has a type and a value
+
+any expression can be an r value
+
+data types
+	integrals
+		sbyte	1	byte
+		short	2	ushort
+		*int	4	uint
+		long	8	ulong
+	floats
+		float	4
+		*double	8
+		decimal	80 (currency)
+
+		char	2
+		bool	1
+
+		string (arbitrary size)
+
+
+in .net, all variables are 0 initialized
+
+always use descriptive variable names
+
+string gets double quotes
+characters get single quotes
+bool are always true or false
+
+file header for all lab assignments:
+/*
+* Lab #
+* Your Name
+*/
+
+
+Console.WriteLine(T)
+Console.ReadLine() - returns string
+
+parameter is how you reference them inside a function body
+arguments are expressions you're passing
+
+
+all primitive types have a Parse function. (accepts a string and returns back the corresponding primitive type) Decimal.Parse(string) -> decimal
+	every parse function has a corresponding tryparse function = Decimal.TryParse ( string, decimal result ) -> bool
+
+Int32.Parse
+Double.Parse
+Boolean.Parse
+
+Input paramater (pass by value) - you will be passed a value, and your function will not change the argument you passed in
+
+Input/Output parameter (pass by reference) - parameter where caller will give you a value and you modify that value and give that back to them
+	any change I make inside the function, you will see outside the function
+
+Output Parameter - where caller doesn't pass you anything other than variable(storage), your function is required to write to that variable and assign it a value. Then when it returns, caller has access to that
+	must be prefixed with keyword "out"
+
+strings are critically important to .net and C#
+
+C# escape sequence: 	\t - tab
+			\n - new line
+			\b - bell
+			\x## - hex
+
+any esape sequence that isn't valid, the compiler will warn you it is not valid
+escape sequences are only applicable inside of string literals
+
+@ symbol around a string literal is a verbatim string
+	verbatim strings ignore escape sequences
+
+strings are immutible
+can create new strings, cannot modify existing ones
+
+literal - value and type, no name, always read only
+constant - value, type, name, read only
+variable - value, type, and name, almost always read and write
+
+
+Conditional operator:
+Eb ? Et : Ef
+Boolean expression is evaluated, if true it takes on expression of first one, if it's false, it will take on expression of second
+
+.IsNullOrEmpty -> bool
+.IsNullOrWhiteSpace -> bool
+
+.Compare(str, str, bool) -> int
+
+if (Eb)
+	S;
+
+else if (Eb)
+	S;
+
+else
+	S;
+
+while (Eb)
+	S;
+
+Do
+	S;
+While (Eb);
+
+
+&& 	and
+|| 	or
+! 	not
+
+Switch (Et)
+{
+	case Et: S; *0 or more
+	default: 
+}
+	switch statements don't need curly brackets unless you have more than one statement (not including the break statement)
+	
+
+var indicated type inferencing
+	compiler infers type of expression based upon its usage
+
+switch(inpt) can be any type that supports constants
+	case labels must be unique
+
+primitive types are aliases for formal types
+	int	Int32
+	bool	Boolean
+	double	Double
+	float	Single
+
+	byte	Byte
+
+Arrays
+	Arrays are primitives
+	In C# the array is part of the type, any place you can use a type, you can use an array
+	//int[] prices;
+	arrays can be used anywhere that you can use a type
+	You can pass it as parameters or return it from functions, it will work in C#
+	C# arrays are 0 based, index starts at 0. Values of index items are called "elements"
+	Arrays are bounce checked in C#, it will crash if you do an "off-by-one error"
+	You can skip first element, but you cannot write past the end of the array
+	Arrays just work like any other primitive
+	They are always passed by reference
+	Arrays are always open arrays
+	size of the array is not part of the type
+new T[size];
+	This defines the array
+	Only way to create an array
+	Arrays are the second type that can be null, they always begin null
+
+for (var index = 0; index < size; ++index)
+	first expression declares the variable, is not required
+	second expression is a conditional Ebool
+	third expression is an update - updates the expression so that you don't get an infinite loop
+	Arrays have a .Length function to tell you how many are in the array
+
+While inside of foreach loop, the array size cannot change
+	for the life of the foreach loop, the array is essentially immutible
+	item is read-only - cannot change element you are currently enumerating
+
+
+str.Split(char[]) -> string[]
+	split never returns null
+
+
+Frameworks for implementing applications [WinForms, WPF, XAML, ASP.NET] - add functionality to .net framework - language agnostic
+Languages [C#, VB, F#, all others] - languages have rules of their language, just syntactic rules, functionality comes from .net
+.NET Framework - implementation of .net that runs on CLR - (only works on windows)
+Common Language Runtime - virtual machine that code runs under - handles everything your program does - CLR is runtime for .NET
+OS
+
+.NET CORE is complete rewrite of .net framework
+	OS agnostic
+	open source
+	faster
+	new
+	evolves rapidly
+	not all of the features in .net framework are there, and some won't ever be - some are windows specific and are therefore not needed
+
+assembly is a binary file on disk
+
+${a} + {b} = {result}
+
+Strong.Format("{0} + {1} = {2}" a,b,result)
+
+namespaces
+	compiler magic
+	used to avoid collision (ambiguous reference)
+	global
+	B.Utility
+	namespaces allow us to declare our stuff scoped so it won't conflict with anyone else
+	You only need to use fully qualified name when there's an ambiguity. 
+	"using" statement adds everything from a namespace as if it had been declared at top of program
+	grey namespaces are ones we didn't use
+	"using" is only for compiler - it just changes what the compiler sees in scope. Doesn't change anything
+	In C#, standard is that folders are part of namespace
+
+f4 to open properties window
+
+OOP
+	object - something that has data and functionality
+	class - blueprint for creating objects
+		represents data and functionality that you need in an object
+
+UI, data layer, business layer
+
+classes are types, anywhere you can use a type, you can use a class
+
+types in .net are pascal-cased always
+
+instance.member
+
+accessibility => visibility
+	allows you to have members that are or are not visible to everybody else depending on what they are
+	public -> everbody
+	(default for members) 	9:26 PM 2/4/2019private -> type only
+	(default for types) 	internal -> assembly only
+
+classes are not just a pot to throw values in. They all need to be related. They need to belong to each other to make sense. 
+	represents object in the system, they are nounse
+	class names will always be noun based
+	pascal cased
+
+public types and public members need to have summaries
+///

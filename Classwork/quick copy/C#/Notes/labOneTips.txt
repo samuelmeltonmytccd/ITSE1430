@@ -1,0 +1,2 @@
+calculate the total on demand, don't keep a running tab
+

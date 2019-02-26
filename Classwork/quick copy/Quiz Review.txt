@@ -1,0 +1,56 @@
+20-25 questions, all multiple choice, 
+
+property - 	data in a class that executes methods
+		has the look of data
+		actually calls methods
+		methods that look like fields
+		use properties, not fields to expose data publicly
+
+calculated property - 	no backing field for property
+			can do anything, provided it returns a value
+
+fields - 	data
+methods - 	functionality
+
+CLR - 		common language runtime
+		virtualizes out a platform that hides OS details from target layer
+			allows a program compiled in C# to run on any platform with a .net runtime
+		responsible for security, error management, threading, etc.
+		runtime host for .net
+
+Assembly - when app is compiled, it becomes .dll or .exe
+
+Padright example:
+	var dept = "toys";
+	dept.Padright(10);
+
+Virtual members - You must mark members as virtual if you want to be able to override them later
+
+fields - when to use
+	need data stored in a class and it will only be used in a class
+
+Constructors
+	class Form
+	{
+		public Form ()
+		{}
+		public Form (string title) : this ()
+		{}
+	}
+	The only way to have a constructor call another constructor
+	it will always call a default constructor 
+
+Events
+	Button btn;
+	btn.Click += OnOk;
+
+	OnOk - event handler
+	Click - event
+
+	Public event EventHandler Click;
+
+?. - Null conditional operator
+
+be familiar with common controls of controls of windows forms
+	which is best to use for what situation
+	

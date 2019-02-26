@@ -1,0 +1,326 @@
+properties are a combination of fields and methods
+	data that has to be called
+	executable code
+	syntax of a field
+	field declaration with curly braces
+	Type id
+	{
+		get{ return _name;}
+		set{ _name = value; }
+	}
+	has name
+	has type
+	type must be correct and cohesive with get and set params
+	value is keyword for set
+	value will hold value of right side of assignemnt (Name = Es) 
+	properties look like data, but don't store any data
+	properties look exactly like fields, but they are executing code behind the scenes
+	properties are the way you expose data from classes 
+	fields are always private
+	designed to be called repeatedly
+	assumed to be as fast as a field
+	if they do not look and behave like fields, they should not be a property
+	You can make a property read only, by not putting in the set command
+	You can do set only, with only set. (password pretty much only use case)
+	You must have one get or set command
+	properties can be changed and you don't have to recompile your code assuming you have the updated binary
+	
+methods are expensive to call
+	cache the result if you care about it
+
+?? Null coalescing operator
+E, ??, E2
+It evalutates 2 expressions, it returns the result of the left value unless it's null, then it returns second value. 
+
+string properties never return null
+	this is implied behavior in .net
+
+in a class, all fields are default 0 initialized
+
+microsoft virtual academy
+	
+Fields are set until you recompile
+	cannot maintain without you recompiling
+
+Auto property is a shortcut for when you are simply 
+	public bool Owned { get; set; } = true;
+
+Only one accessor can be changed, and it must be more restrictive than the property declared accessibility
+	internal is public to the assembly it's assigned in, private to all else
+
+
+
+When your property should be a method
+	If your property takes any amount of time to execute, it should be a method
+	calls to network, file system, databases, etc
+	should be deterministic (call it with same parameters and you will get the same results)
+		If calling the code has a side effect, it is not deterministic
+			caching is excluded from that
+
+a method tells the user, cache the value
+property says, just use it
+
+arrays require allocation of menu
+If you are going to return back an array, you should probably use a method
+
+If you use a property with an array, you have exposed the contents of the array
+
+
+
+---------------------------------------------------------------------2/18/19---------------------------------------------------------------
+events covered last time
+
+showdialog() - renders form on screen
+	show dialog returns back the dialogue result
+	dialogresult
+
+fields
+methods
+properties
+events
+
+instance.click
+	 a method must be assigned to this event 
+	+= adding an event to an event handler
+	single event can have 0 or more listeners
+	instance.click += OnSave;
+		OnSave is handler, method that will be called 
+	requires a function with signature that returns void, and will accept arguments: (object, EventArgs)
+
+delegates - function object
+	function that can be passed like a parameter (can be passed as an argument, stored in variables, can be called)
+	All delegates have an absolute type
+
+handler becomes a delegate
+
+Signature - (params and return type)
+
+event "EventHandler" click; 
+
+First paramter is "sender" - object raising the event (left side of instance.click)
+Second paramter is event arguments  - you typically do not need additional arguments - "Empty" is default
+	If you use a second parameter, it should be in the form of: (CancelEventArgs) just add name and then put eventargs
+Event arguments are typically read-only. You can only see what it was, you can't modify it. 
+	events are sequential, but designed to run in isolation
+	event handlers should not depend on other event handlers to run properly
+	if an earlier event handler fails, the later ones won't get called
+	properties of EventArgs are read-only most of the time
+
+	
+	
+CancelEventArgs
+	this is how you stop an event, it's the only one that returns a set-able property 
+
+objects
+	
+Event: SelectedIndexChanged
+
+_listGames.SelectedValue;
+	have to typecast this as it will be of type "object", needs to be of type Game
+
+.net is always type safe - you cannot treat an object as another object
+
+Preferred type casting
+var game = value as Game;
+
+E as T returns typecasted variable or null
+as operator E as t is the best way to typecast
+	runtime-safe call
+	returns the proper typecast or it will return back null if it isn't compatible
+
+Type check type casting
+var game2 = (value is Game) ? (Game)value : null;
+
+E is T - returns bool
+is operator determines if the value on the left is type compatible with requested type and returns back true or false
+
+
+typecasting option 3:
+(Form)value
+
+databinding - hooking your data up to a ui
+
+winforms has basic data binding ability
+	tend to just do it manually
+
+listbox uses ToString() to render
+
+Clear() will wipe out anything in the list box
+
+SelectedIndex - int
+SelectedItem - object
+SelectedValue - object
+
+DisplayMember has to reference a public property
+
+nameof operator 
+	nameof(Type/member) requires a type name or member name and will convert to a string literal
+
+object is an important type
+	try to avoid as you have to use typecasting
+	everything is ultimately an object
+
+inheritance
+	the ability to inherit the attributes, characteristics, properties of something else
+	types can inherit from other types
+	
+Object is the base type of everything
+	everything inherits some base characteristics
+	ToString() - returns a string representation of that object
+	
+primitives are children to "Value Type" which is child to "Object"
+
+every type is either pass by value or pass by reference
+	if it is derived from "value type" it is a value type otherwise, it is a reference type
+	
+Value types
+	pass by value
+	a=b - always a copy
+	stack based
+	a == b
+	value types follow value symantics
+		looks only at value itself
+	Can never be null
+	immutable
+	struct is value
+	no inheritance
+
+Reference types
+	pass by reference
+	a=b - now points to same object in memory
+	allocated memory
+	reference parameters use reference symantics
+	a == b ONLY if they point to the same place in memory
+		looks to see if they reference the same thing
+	can be null
+	mutable
+	class is a reference type
+	inheritance
+
+You cannot change a class to a struct or vice versa
+
+intellisense will say class for reference types and struct for value types
+
+
+--------------------------------------------------------------------------------------2/20/19-----------------------------------------------------------------------------------------------------------------
+
+reference symantics of reference types can be overridden. strings do actually use value symantics
+
+With value types, inheritace is not allowed.
+
+Every class can have one and only one base class
+
+class Type : Base type
+
+"Control" Type
+	where UI stuff resides
+	has all the logic to paint something on the screen
+	
+
+"Component" Type
+	Something that runs outside of a UI
+	
+Most things will derive directly from Object, but winForms uses inheritance a lot
+
+Every form has a load event, it's called just before the form is loaded on the screen
+
+events are for external sources, not derived types
+
+protected - accessibility modifier - only type itself and derived types have access
+
+virtual methods - virtual you can change the derived type's behavior later by changing the 
+
+v-table - where references to methods are stored
+
+if method is not virtual, it doesn't need to be in the v-table because there's only one. It's sitting the type you're referencing it from.
+if it is marked virtual, it needs to be marked in v-table
+
+v-table is list of all virtual methods and pointers to where they are in memory
+
+if you are overriding a virtual member, you must use the override keyword
+	you cannot declare the method without it - compiler error
+
+if you are adding a type or method that you want to allow to be overridden, you must mark it as virtual
+	if you want to override a type, you must declare override
+	When you want to call the base version of an overridden type you have to use base.FunctionName;
+
+base keyword - call the base type's implementation of this
+	only needed when you're inside of virtual members and need to call base member's
+
+value types do not support inheritance, so no virtual for those
+
+Constructors
+	allows you to do any initialization that you normally cannot do
+
+var x = new Type();
+	zero initialized
+	field initializers
+	init objects/constructor	
+	one field cannot reference another field, because it happens in an arbitrary order
+	any initialization you need to do inside of a field initializer, you use a constructor
+	
+Constructors
+	use Type name has a method
+	constructor canot have a return type
+	constructors effectively behave like normal methods with restrictions:
+		cannot be called directly
+		errors are very bad - generally should never do anything that could possibly go wrong (call databases - read file systems)
+			this should be blindingly fast, like a property, nothing that takes time
+		Should behave no different than doing it manually
+	typically just used to setup properties
+	you can have overloads on constructors
+	can never be virtual
+	Every type has to define the constructors it supports
+	do not call virtual members from inside of a cultural - end up calling something that isn't initialized properly
+
+constructor chaining *************fuzzy on this
+	public Type ( string property ) : this(property, 0)
+	
+
+every type has default constructor, default constructor has no parameters - until you define a constructor and then it has no default
+	when you define a constructor, if you want to use default, you must define it yourself
+
+if you are deriving from a type, the base constructor is called implicitly
+	
+Null conditional operator
+	?.
+	requires instance on let of type reference type ?.member
+	if thing on left side is null, the whole thing is null; otherwise call member on right
+	
+
+nullable int is a special type that allows you to store a value or a null
+	used mainly in database calls 
+	also used with null coalescing operator
+	
+
+
+
+----------------------------------------------------------------------------------2/5/19---------------------------------------------------------------
+Object
+	ToString() -> String
+	Equals(object) -> bool
+		never override Equeals on a class
+		always override Equals on a struct
+	GetType() -> Type
+	GetHashCode() -> int	
+
+intellicode extension for visual studio
+	intellisense with AI from Azure
+	rather than just reacting to code you currently have, it pulls down additional code samples to give you examples of how others are implementing similar code
+
+var form = new form();
+	allocates memory
+	zero initialized
+	field initializers
+	init objects/constructor
+
+	When showdialog executed on a form
+		window created (OS)
+		OnLoad / Load
+			Figures out what we're going to render
+			initialize stuff
+		Displayed
+
+	When the form has reached EOL
+		OnFormClosing();
+		OnFormClosed();

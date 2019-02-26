@@ -1,0 +1,66 @@
+
+
+Heading tags - block level elements
+	<h1></h1> - largest
+	<h2></h2>
+	<h3></h3>
+	<h4></h4> - about the size of normal text
+	<h5></h5>
+	<h6></h6>
+
+HTML 5 added new elements designed to help organize content
+	accessibility - screen reader friendly
+	audio/video support - 
+	doctype simplified
+	cleaner html code
+	handles storage of web page better
+	mobile friendly
+	current standard
+
+Semantic/Structural elements
+	Semantic elements have the name of the tag describing what's inside the tag.
+	All are children of body.
+<header>	</header>
+<article>	</article> 
+<aside>		</aside> (right hand side of document)
+<footer>	</footer>
+<nav>		</nav> (navigation bar setup - right under header)
+<section>	</section> (used to divide up large pieces of text)
+
+
+DIV tag
+	<div></div>
+	No defined usage rules
+	just used to create an organizational element
+
+Grouping elements
+	<div></div> - block element too (blank line in front of it and after)
+
+<p>1st paragraph</p>
+<p>2nd paragraph</p>
+<p>3rd paragraph</p>
+
+Text-level elements
+	<br />
+	<strong></strong> - bold
+	<em></em> - italics
+
+CSS - Cascading style sheets
+	css is used to contain information to explain styling for different elements of page
+	3 categories of styles
+		inline style - in line with the text
+		embedded styles - defined in one tag at the top of an html file
+		external styles - an external file containing all the styles for added web site.
+
+Inline style example:
+<h1 style="color:blue">Text goes here</h1>
+
+<style>
+</styles>
+
+external style files
+.css
+
+to connect an html file to a css external file
+
+<link href = "filename" rel="stylesheet" />

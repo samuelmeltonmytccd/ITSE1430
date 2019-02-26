@@ -61,5 +61,10 @@ namespace GameManager.Host.Winforms
             //Display UI
             //If OK then "add" to system
         }
+
+        private void OnGameSelected( object sender, EventArgs e )
+        {
+
+        }
     }
 }

@@ -1,0 +1,1 @@
+C:\>netsh wlan connect ssid="WPATubez" name="WPATubez"

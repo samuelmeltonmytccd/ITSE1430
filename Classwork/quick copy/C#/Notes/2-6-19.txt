@@ -1,0 +1,67 @@
+
+DON'T FORGET TO ASK LAB 1 QUESTION
+Close();
+
+
+accessibility
+	public - public anyone
+	private - type only
+	internal - assembly(project) only (public to assembly, private to everyone else)
+
+type can only be public or internal
+	internal is default if not specified
+
+members are private by default
+	members can be public, private, or internal
+
+have to use new to create a new instance of a type
+
+fields are where data is stored in a class
+	field is a glorified variable
+	field is just a variable declaration in the root of the class
+	fields have accessiblity modifier
+	
+
+. member access operator
+
+field initializers cannot access any members of the current type
+
+data transfer objects
+	classes with just a set of variables
+
+accelerator key - allows keyboard navigation within an application
+
+name property does 2 things
+	allows you to programmatically find that control at runtime
+	controls the field that is generated behind the scenes
+
+_miFileExit
+
+On________
+
+
+Functions are things that aren't in a class
+	always verbs
+	represent actions
+	Pascal casing
+
+members are pascal casing as well	
+parameters and local variables are camel cased
+
+
+Methods are funtions that are in a class
+	Access type id (params(0 or more parameters))
+	{ {statements}(0 or more0)
+	}
+
+	methods are typicall public or private
+		expose functionality or not
+
+pass by value - input parameter
+
+void will only appear as a return type of a method
+
+Inside of a method "this" is a method that represents the current instance it is running against.
+	use case is really only useful as passing this as a parameter inside of a method on that instance
+
+
