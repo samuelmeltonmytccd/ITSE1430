@@ -66,7 +66,7 @@
             // _miFileExit
             // 
             this._miFileExit.Name = "_miFileExit";
-            this._miFileExit.Size = new System.Drawing.Size(180, 22);
+            this._miFileExit.Size = new System.Drawing.Size(92, 22);
             this._miFileExit.Text = "E&xit";
             this._miFileExit.Click += new System.EventHandler(this.OnFileExit);
             // 
@@ -93,6 +93,7 @@
             this._miGamesEdit.Name = "_miGamesEdit";
             this._miGamesEdit.Size = new System.Drawing.Size(180, 22);
             this._miGamesEdit.Text = "&Edit";
+            this._miGamesEdit.Click += new System.EventHandler(this.OnGameEdit);
             // 
             // toolStripSeparator1
             // 
@@ -104,6 +105,7 @@
             this._miGamesDelete.Name = "_miGamesDelete";
             this._miGamesDelete.Size = new System.Drawing.Size(180, 22);
             this._miGamesDelete.Text = "&Delete";
+            this._miGamesDelete.Click += new System.EventHandler(this.OnGameDelete);
             // 
             // _miHelp
             // 
@@ -122,6 +124,8 @@
             // 
             // _listGames
             // 
+            this._listGames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this._listGames.FormattingEnabled = true;
             this._listGames.Location = new System.Drawing.Point(12, 27);
             this._listGames.Name = "_listGames";
@@ -133,6 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this._listGames);
             this.Controls.Add(this.menuStrip1);

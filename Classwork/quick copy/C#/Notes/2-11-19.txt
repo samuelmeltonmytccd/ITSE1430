@@ -295,7 +295,7 @@ nullable int is a special type that allows you to store a value or a null
 
 
 
-----------------------------------------------------------------------------------2/5/19---------------------------------------------------------------
+----------------------------------------------------------------------------------2/25/19---------------------------------------------------------------
 Object
 	ToString() -> String
 	Equals(object) -> bool
@@ -324,3 +324,32 @@ var form = new form();
 	When the form has reached EOL
 		OnFormClosing();
 		OnFormClosed();
+
+
+----------------------------------------------------------------------------2/27/19---------------------------------------------------------------------
+
+
+business logic always enforces rules
+UI tends to enforce the easy stuff up front (fields that are required, field lengths, min/max ranges)
+
+Validation
+	1) validate it at the point the user saves - this event is called when the control gets the focus. if it never gets focus, it doesn't get called
+		can't lose focus if it is invalid
+	2) 
+
+2 events for every control
+	validating - called before it is validated
+
+Form selected > properties > Behavior > auto Validate > EnableAllowFocusChange
+	validated - called after
+
+ValidateChildren()
+: if (!ValidateChildren())
+	return;
+
+whether validation is triggered or not is not determined by the specific object's properties, but by the item that is getting focus' properties. Change cancel's property and it will basically work
+
+extender providers
+	components inject properties into other controls
+	don't have properties of their own
+
