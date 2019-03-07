@@ -59,6 +59,7 @@
             this._miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._miFileExit});
             this._miFile.Name = "_miFile";
+            this._miFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
             this._miFile.Size = new System.Drawing.Size(37, 20);
             this._miFile.Text = "&File";
             this._miFile.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
@@ -66,7 +67,8 @@
             // _miFileExit
             // 
             this._miFileExit.Name = "_miFileExit";
-            this._miFileExit.Size = new System.Drawing.Size(92, 22);
+            this._miFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this._miFileExit.Size = new System.Drawing.Size(180, 22);
             this._miFileExit.Text = "E&xit";
             this._miFileExit.Click += new System.EventHandler(this.OnFileExit);
             // 
@@ -78,12 +80,14 @@
             this.toolStripSeparator1,
             this._miGamesDelete});
             this._miGames.Name = "_miGames";
+            this._miGames.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.G)));
             this._miGames.Size = new System.Drawing.Size(55, 20);
             this._miGames.Text = "&Games";
             // 
             // _miGamesAdd
             // 
             this._miGamesAdd.Name = "_miGamesAdd";
+            this._miGamesAdd.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
             this._miGamesAdd.Size = new System.Drawing.Size(180, 22);
             this._miGamesAdd.Text = "&Add";
             this._miGamesAdd.Click += new System.EventHandler(this.OnGameAdd);
@@ -91,6 +95,7 @@
             // _miGamesEdit
             // 
             this._miGamesEdit.Name = "_miGamesEdit";
+            this._miGamesEdit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this._miGamesEdit.Size = new System.Drawing.Size(180, 22);
             this._miGamesEdit.Text = "&Edit";
             this._miGamesEdit.Click += new System.EventHandler(this.OnGameEdit);
@@ -103,6 +108,7 @@
             // _miGamesDelete
             // 
             this._miGamesDelete.Name = "_miGamesDelete";
+            this._miGamesDelete.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D)));
             this._miGamesDelete.Size = new System.Drawing.Size(180, 22);
             this._miGamesDelete.Text = "&Delete";
             this._miGamesDelete.Click += new System.EventHandler(this.OnGameDelete);
@@ -112,14 +118,16 @@
             this._miHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._miHelpAbout});
             this._miHelp.Name = "_miHelp";
+            this._miHelp.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
             this._miHelp.Size = new System.Drawing.Size(44, 20);
             this._miHelp.Text = "&Help";
             // 
             // _miHelpAbout
             // 
             this._miHelpAbout.Name = "_miHelpAbout";
-            this._miHelpAbout.Size = new System.Drawing.Size(107, 22);
-            this._miHelpAbout.Text = "&About";
+            this._miHelpAbout.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
+            this._miHelpAbout.Size = new System.Drawing.Size(180, 22);
+            this._miHelpAbout.Text = "A&bout";
             this._miHelpAbout.Click += new System.EventHandler(this.OnHelpAbout);
             // 
             // _listGames

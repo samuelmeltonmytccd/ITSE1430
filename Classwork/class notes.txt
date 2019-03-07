@@ -217,3 +217,108 @@ typical validation logic is to check for bad conditions and then validate it if 
 method calls are always in the form of instance.method();
 
 all types have a ToString class
+
+------------------------------------------------------------------------------3/6/2019----------------------------------------------------------------------
+
+stuff covered last time:
+Call Stack
+exception
+	(TYPE)
+	message->string
+	stacktrace->string
+
+arguments
+	ArgumentNullException
+	ArgumentOutOfRangeException
+	ArgumentException
+	NullReferenceException
+	InvalidOperationException (out of context i.e. trying to write to a file that's been closed)
+
+to raise an error:
+	throwEe
+		New Exception()
+ports
+
+moved most of game management into database class
+added errors into functions
+
+
+system exceptions are for use by system only
+	NullReferenceException
+	system exceptions always come from the runtime
+	InvalidCastException
+	IndexOutofRangeException
+		reserved for array indexing
+	fatal exceptions
+		OutOfMemoryException
+		StackOverflowException
+			both of these are going to kill your program no matter what, don't bother handling them (most of the time)
+
+best default option for errors is to do nothing - let the error happen
+
+
+try-catch
+		try
+		{} catch
+		{};
+	any code that may raise an error, you put inside the try block, if it does raise an error, the runtime will jump to the catch box to try and deal with it
+	You only put code in a try block that you can recover from
+	don't put your entire program in a try block
+	When an error occurrs in the try block, the try block is not re-executed
+	in any case, the program will continue after the try-catch
+	versino above is a catch-all version and is rarely useful
+	catch (Exception e) 
+		this will store the error message in the variable e, and is now usable in the catch block to create an exception
+	You can have multiple catch blocks with the exception type as a different type of exception, therefore you can catch based on the type of error you receive
+		ex. catch (InvalidOperationException)
+	If you are using catch without a type, it has to be the last one.
+	exceptino catch blocks need to be in order from most specific to least 
+
+In order to have exception continue on inside the catch block, you need to "re-throw the exception"
+SO
+	try
+	{} catch (Exception e)
+	{
+		throw;
+	}
+
+	the error will now continue looking for a catch block from this point on
+		throw without an expression is only valid inside of a catch block
+
+
+MessageBox.Show(this, "Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+You can put the entire thing in a while (true) statement and put a break statement in the bottom of the try block
+	if it executes, it will break the while statement, if it doesn't it will give error and then retry
+
+pseudo variable 
+	$exception
+
+exceptions are expensive - specifically throw is expensive
+	runtime freezes the execution of the program - technically the thread
+	it then starts walking the stack, looking for catch blocks to handle the correct type of exception being thrown
+	once it finds the catch block, it wipes all the calls above it in the call stack
+	it will then execute the catch block code and continue
+	if it is unhandled and gets back to main, it will crash the program
+	if running in the debugger
+
+lookup exception filters if you want to execute the same code for multiple catch statements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
